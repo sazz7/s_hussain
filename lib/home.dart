@@ -7,7 +7,7 @@ class Mainhome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Home Page 1"),
+        title: Text("Home Page"),
       ),
       body: Stack(
         children: [

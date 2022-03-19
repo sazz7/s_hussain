@@ -4,7 +4,7 @@ class Mainhome extends StatelessWidget {
   const Mainhome({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildCont Kext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home Page 1"),

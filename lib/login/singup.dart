@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
-class Singup extends StatelessWidget {
-  const Singup({Key? key}) : super(key: key);
+class Singup extends StatefulWidget {
+   Singup({Key? key}) : super(key: key);
+
+  @override
+  State<Singup> createState() => _SingupState();
+}
+
+class _SingupState extends State<Singup> {
+  String date = "Select Date";
+  TextEditingController dateController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -38,19 +47,62 @@ class Singup extends StatelessWidget {
                       ],),
                       SizedBox(height: 10,),
                       Row(children: [
-                        Expanded(child: _textfild("First name")),
+                        Expanded(child: InkWell(
+                          onTap: () async{
+                            final result = await showDatePicker(context: context,
+                              lastDate: DateTime.now(),
+                              initialDate: DateTime.now(),
+                              firstDate: DateTime.now(),
+                            );
+
+                            if (result != null) {
+                              final format = DateFormat("dd/MM/yyyy");
+
+                              dateController.text = format.format(result);
+                              setState(() {
+
+                              });
+                            }
+                          },
+                          child: AbsorbPointer(
+                            child: _textfild("DOB", prefix: Icon(Icons.calendar_today), controller: dateController)
+                          ),
+                        )),
                         Expanded(child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Container(
-                            height: 45,
-                            color: Colors.red,
-                            child: Text("h"),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.all(Radius.circular(10)),
-                              border: Border.all(
-                                width: 5,
-                                color: Colors.black
-                              )
+                          child: InkWell(
+                            onTap: () async{
+                              final result = await showDatePicker(context: context,
+                                lastDate: DateTime.now(),
+                                initialDate: DateTime.now(),
+                                firstDate: DateTime.now(),
+                              );
+
+                              if (result != null) {
+                                final format = DateFormat("dd/MM/yyyy");
+
+                                date = format.format(result);
+                                setState(() {
+
+                                });
+                              }
+                            },
+                            child: Container(
+                              height: 48,
+                              //color: Colors.red,
+                              child: Center(
+                                child: Text(date,style: TextStyle(
+                                  fontSize: 16
+                                ),),
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.grey[300],
+                                borderRadius: BorderRadius.all(Radius.circular(10)),
+                                border: Border.all(
+                                  width: 1,
+                                  color: Colors.black.withOpacity(.58)
+                                )
+                              ),
                             ),
                           ),
                         ))
@@ -88,18 +140,21 @@ class Singup extends StatelessWidget {
   }
 }
 
-_textfild(text){
+_textfild(text, {Widget? prefix, TextEditingController? controller}){
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 10),
     child: TextField(
+      controller: controller,
       decoration: InputDecoration(
           contentPadding:
-          EdgeInsets.symmetric(vertical: 0, horizontal: 15),
+          EdgeInsets.symmetric(vertical: 0, horizontal: 12),
           filled: true,
           fillColor: Colors.grey[300],
           hintText: text,
+          prefixIcon: prefix,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
+
           )),
     ),
   );

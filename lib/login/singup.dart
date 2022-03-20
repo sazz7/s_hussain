@@ -36,7 +36,25 @@ class Singup extends StatelessWidget {
                         Expanded(child: _textfild("First name")),
                         Expanded(child: _textfild("Last name"))
                       ],),
-
+                      SizedBox(height: 10,),
+                      Row(children: [
+                        Expanded(child: _textfild("First name")),
+                        Expanded(child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Container(
+                            height: 45,
+                            color: Colors.red,
+                            child: Text("h"),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              border: Border.all(
+                                width: 5,
+                                color: Colors.black
+                              )
+                            ),
+                          ),
+                        ))
+                      ],),
                       SizedBox(height: 10,),
                       _textfild("Moblie no."),
                       SizedBox(height: 10,),

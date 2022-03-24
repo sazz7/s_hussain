@@ -70,39 +70,20 @@ class _SingupState extends State<Singup> {
                         )),
                         Expanded(child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: InkWell(
-                            onTap: () async{
-                              final result = await showDatePicker(context: context,
-                                lastDate: DateTime.now(),
-                                initialDate: DateTime.now(),
-                                firstDate: DateTime.now(),
-                              );
-
-                              if (result != null) {
-                                final format = DateFormat("dd/MM/yyyy");
-
-                                date = format.format(result);
-                                setState(() {
-
-                                });
-                              }
-                            },
-                            child: Container(
-                              height: 48,
-                              //color: Colors.red,
-                              child: Center(
-                                child: Text(date,style: TextStyle(
-                                  fontSize: 16
-                                ),),
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.grey[300],
-                                borderRadius: BorderRadius.all(Radius.circular(10)),
-                                border: Border.all(
-                                  width: 1,
-                                  color: Colors.black.withOpacity(.58)
-                                )
-                              ),
+                          child: Container(
+                            height: 48,
+                            child: Center(
+                              child: Text(date,style: TextStyle(
+                                fontSize: 16
+                              ),),
+                            ),
+                            decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius: BorderRadius.all(Radius.circular(10)),
+                              border: Border.all(
+                                width: 1,
+                                color: Colors.black.withOpacity(.58)
+                              )
                             ),
                           ),
                         ))

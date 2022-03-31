@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:s_hussain/login/login.dart';
 import 'package:s_hussain/login/singup.dart';
+import 'package:s_hussain/neumorphism.dart';
 import 'package:s_hussain/resume.dart';
 import 'package:s_hussain/whatsapp.dart';
 
@@ -17,6 +18,7 @@ void main(){
       "login" : (context) => Mylogin(),
       "whatsapp" : (context) => WhatsApp(),
       'singup' : (context) => Singup(),
+      'neumorphism' : (context) => Neumorphim(),
     },
   ));
 }

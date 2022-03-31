@@ -73,28 +73,41 @@ class _MyloginState extends State<Mylogin> {
                     SizedBox(
                       height: 20,
                     ),
-                    SizedBox(
-                      height: 40,
-                      width: 150,
-                      child: ElevatedButton(
-                        style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(Colors.cyan),
-                        ),
-                        onPressed: () {},
-                        child: Text("Login"),
-                      ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                        Text("Sing In",style: TextStyle(
+                          fontSize: 30,fontWeight: FontWeight.w400,decoration: TextDecoration.underline
+                        ),),
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundColor: Color(0xff3B434D),
+                          child: IconButton(
+                            color: Colors.white,
+                            onPressed: (){},
+                            icon: Icon(Icons.arrow_forward),
+                          ),
+                        )
+                      ],),
                     ),
                     SizedBox(
                       height: 20,
                     ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.pushNamed(context, "singup");
-                      },
-                      child: Text(
-                        "Sing up",
-                        style: TextStyle(color: Colors.blue),
-                      ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                        TextButton(onPressed: (){Navigator.pushNamed(context, "singup");},
+                            child: Text("Sing up",style: TextStyle(
+                          decoration: TextDecoration.underline,fontSize: 15
+                        ))),
+                        TextButton(onPressed: (){}, child: Text("Forget password",style: TextStyle(
+                            decoration: TextDecoration.underline,fontSize: 15
+                        ))),
+                      ],),
                     ),
                   ],
                 ),

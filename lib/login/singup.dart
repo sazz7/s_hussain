@@ -30,7 +30,7 @@ class _SingupState extends State<Singup> {
             Container(
               padding: EdgeInsets.only(top: 90, left: 40),
               child: Text(
-                "Register",
+                "Create\nAccount",
                 style: TextStyle(color: Colors.white, fontSize: 33),
               ),
             ),
@@ -71,12 +71,8 @@ class _SingupState extends State<Singup> {
                         Expanded(child: Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10),
                           child: Container(
+                            child: Center(child: Text("hello")),
                             height: 48,
-                            child: Center(
-                              child: Text(date,style: TextStyle(
-                                fontSize: 16
-                              ),),
-                            ),
                             decoration: BoxDecoration(
                               color: Colors.grey[300],
                               borderRadius: BorderRadius.all(Radius.circular(10)),

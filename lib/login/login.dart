@@ -86,7 +86,9 @@ class _MyloginState extends State<Mylogin> {
                           backgroundColor: Color(0xff3B434D),
                           child: IconButton(
                             color: Colors.white,
-                            onPressed: (){},
+                            onPressed: (){
+                              Navigator.pushNamed(context, "login_home");
+                            },
                             icon: Icon(Icons.arrow_forward),
                           ),
                         )

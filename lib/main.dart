@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:s_hussain/login/home.dart';
 import 'package:s_hussain/login/login.dart';
 import 'package:s_hussain/login/singup.dart';
 import 'package:s_hussain/neumorphism.dart';
@@ -8,8 +9,6 @@ import 'package:s_hussain/whatsapp.dart';
 import 'home.dart';
 
 void main(){
-  //Helo
-  //fsdhgj
   runApp(MaterialApp(
     initialRoute: "home",
     routes: {
@@ -19,6 +18,8 @@ void main(){
       "whatsapp" : (context) => WhatsApp(),
       'singup' : (context) => Singup(),
       'neumorphism' : (context) => Neumorphim(),
+      "login_home" : (context) => Loginhome()
+
     },
   ));
 }

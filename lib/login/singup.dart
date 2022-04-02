@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -84,26 +85,25 @@ class _SingupState extends State<Singup> {
                           ),
                         ))
                       ],),
-                      SizedBox(height: 10,),
-                      _textfild("Moblie no."),
-                      SizedBox(height: 10,),
-                      _textfild("Email id"),
+                      SizedBox(height: 10),
+                      _textfild("Moblie no.",Num: TextInputType.number),
+                      SizedBox(height: 10),
+                      _textfild("Email id", Num: TextInputType.emailAddress),
                       SizedBox(
                         height: 20,
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      SizedBox(
-                        height: 40,
-                        width: 150,
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.cyan),
-                          ),
-                          onPressed: () {},
-                          child: Text("Sing up"),
-                        ),
+                      MaterialButton(height: 40, minWidth: 160,
+                        color: Color(0xff3B434D),
+                        onPressed: () {},
+                        child: Text("Sing up",style: TextStyle(
+                          color: Colors.white,
+                        ),),
+                        shape: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(32),
+                        )
                       ),
                     ],
                   ),
@@ -117,22 +117,27 @@ class _SingupState extends State<Singup> {
   }
 }
 
-_textfild(text, {Widget? prefix, TextEditingController? controller}){
+_textfild(text, {Widget? prefix, TextEditingController? controller, TextInputType? Num}){
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 10),
     child: TextField(
+      keyboardType: Num,
       controller: controller,
       decoration: InputDecoration(
+        enabledBorder: OutlineInputBorder(
+          borderSide: BorderSide(color: Colors.white),
+          borderRadius: BorderRadius.circular(10),
+        ),
           contentPadding:
           EdgeInsets.symmetric(vertical: 0, horizontal: 12),
           filled: true,
-          fillColor: Colors.grey[300],
+          fillColor: Colors.transparent,
           hintText: text,
           prefixIcon: prefix,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-
-          )),
+          ),
+      ),
     ),
   );
 }

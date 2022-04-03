@@ -18,7 +18,11 @@ class Mainhome extends StatelessWidget {
               Row(children: [
                 _button(btext: "Resume", press: () {Navigator.pushNamed(context, "resume");}),
                 _button(btext: "Login", press: () {Navigator.pushNamed(context, "login");}),
-                _button(btext: "WhatApp",press: (){Navigator.pushNamed(context, "whatsapp");}),
+                _button(btext: "WhatsApp",press: (){Navigator.pushNamed(context, "whatsapp");}),
+              ],),
+              SizedBox(height: 20),
+              Row(children: [
+                _button(btext: "Neumorphism",press: (){Navigator.pushNamed(context, "neumorphism");}),
               ],)
             ],
             ),

@@ -1,8 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
-class Neumorphim extends StatelessWidget {
+class Neumorphim extends StatefulWidget {
   const Neumorphim({Key? key}) : super(key: key);
+
+  @override
+  State<Neumorphim> createState() => _NeumorphimState();
+}
+
+class _NeumorphimState extends State<Neumorphim> {
+
+  bool isSwitched = false;
 
   @override
   Widget build(BuildContext context) {
@@ -120,9 +128,20 @@ class Neumorphim extends StatelessWidget {
                 Container(height: 35,width: 80,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(32),
-                    color: Colors.red,
+                    //color: Colors.red,
                   ),
-                )
+                  child: Switch(
+                    value: isSwitched,
+                    onChanged: (value) {
+                      setState(() {
+                        isSwitched = value;
+                        print(isSwitched);
+                      });
+                    },
+                    activeTrackColor: Colors.indigo,
+                    activeColor: Colors.green,
+                  ),
+                ),
               ],
             )
           ],)

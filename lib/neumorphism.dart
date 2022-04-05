@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
@@ -151,17 +149,24 @@ class _NeumorphimState extends State<Neumorphim> {
               ],
             ),
             SizedBox(height: 20),
-            Text("Age",textAlign: TextAlign.left, style: TextStyle(
+            Text(
+              "Age  ${val.toInt()}",textAlign: TextAlign.left,
+              style: TextStyle(
               fontSize: 20,fontWeight: FontWeight.bold,
             ),),
-            NeumorphicSlider(
-              value: val,
-              onChanged: (value){
-                val = value;
-                setState(() {
+            SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0),
+              child: NeumorphicSlider(
+                min: 1, max: 120,
+                value: val,
+                onChanged: (value){
+                  val = value;
+                  setState(() {
 
-                });
-              },
+                  });
+                },
+              ),
             )
           ],)
         ),

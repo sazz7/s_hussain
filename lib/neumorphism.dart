@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
@@ -11,6 +13,7 @@ class Neumorphim extends StatefulWidget {
 class _NeumorphimState extends State<Neumorphim> {
 
   bool isSwitched = false;
+  double val = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -125,24 +128,40 @@ class _NeumorphimState extends State<Neumorphim> {
                     ),
                   ),
                 ),
-                Container(height: 35,width: 80,
+                Container(height: 35,width: 70,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(32),
                     //color: Colors.red,
                   ),
-                  child: Switch(
+                  child: NeumorphicSwitch(
                     value: isSwitched,
                     onChanged: (value) {
                       setState(() {
                         isSwitched = value;
-                        print(isSwitched);
                       });
                     },
-                    activeTrackColor: Colors.indigo,
-                    activeColor: Colors.green,
+                    style: NeumorphicSwitchStyle(
+                      activeTrackColor: Colors.blueAccent,
+                      activeThumbColor: Colors.redAccent,
+                    ),
+                    //activeTrackColor: Colors.indigo,
+                    //activeColor: Colors.green,
                   ),
                 ),
               ],
+            ),
+            SizedBox(height: 20),
+            Text("Age",textAlign: TextAlign.left, style: TextStyle(
+              fontSize: 20,fontWeight: FontWeight.bold,
+            ),),
+            NeumorphicSlider(
+              value: val,
+              onChanged: (value){
+                val = value;
+                setState(() {
+
+                });
+              },
             )
           ],)
         ),

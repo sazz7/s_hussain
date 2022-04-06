@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:intl/intl.dart';
 
 class Neumorphim extends StatefulWidget {
   const Neumorphim({Key? key}) : super(key: key);
@@ -150,9 +151,10 @@ class _NeumorphimState extends State<Neumorphim> {
             ),
             SizedBox(height: 20),
             Text(
-              "Age  ${val.toInt()}",textAlign: TextAlign.left,
+              "Age  ${val.toInt()}",
+              textAlign: TextAlign.start,
               style: TextStyle(
-              fontSize: 20,fontWeight: FontWeight.bold,
+              fontSize: 25,fontWeight: FontWeight.bold,
             ),),
             SizedBox(height: 10),
             Padding(

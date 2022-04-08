@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:s_hussain/whatsapp/chat.dart';
+import 'package:s_hussain/whatsapp/chat_page.dart';
 
 class WhatsApp extends StatefulWidget {
   @override

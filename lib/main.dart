@@ -18,8 +18,7 @@ void main(){
       "whatsapp" : (context) => WhatsApp(),
       'singup' : (context) => Singup(),
       'neumorphism' : (context) => Neumorphim(),
-      "login_home" : (context) => Loginhome()
-
+      "login_home" : (context) => Loginhome(),
     },
   ));
 }

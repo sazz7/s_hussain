@@ -11,10 +11,10 @@ class Mainhome extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          Image.asset("assets/home.jpg",fit: BoxFit.cover,height: MediaQuery.of(context).size.height,),
+          Image.asset("assets/home.jpg",fit: BoxFit.cover,height: MediaQuery.of(context).size.height),
           Container(
             child: Column(children: [
-              SizedBox(height: 30,),
+              SizedBox(height: 30),
               Row(children: [
                 _button(btext: "Resume", press: () {Navigator.pushNamed(context, "resume");}),
                 _button(btext: "Login", press: () {Navigator.pushNamed(context, "login");}),
@@ -22,7 +22,7 @@ class Mainhome extends StatelessWidget {
               ],),
               SizedBox(height: 20),
               Row(children: [
-                _button(btext: "Neumorphism",press: (){Navigator.pushNamed(context, "neumorphism");}),
+                _button(btext: "Neumorphisc",press: (){Navigator.pushNamed(context, "neumorphism");}),
               ],)
             ],
             ),
